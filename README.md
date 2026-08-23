@@ -1,8 +1,3 @@
-Yes. For a **final-year project GitHub repository**, I would keep it clean, technical, and human-written — no excessive emojis, no marketing language, and only `#` / `##` headings.
-
-Replace your entire `README.md` with this:
-
-````markdown
 # AI Code Intelligence
 
 AI Code Intelligence is a Python-based source code analysis and forensic comparison system developed as a final-year project.
@@ -311,25 +306,4 @@ The Streamlit interface is operational, the main analysis modules have automated
 
 Parkavi_off
 
-Final Year Project
 
-````
-
-### One important correction
-
-I deliberately used `###` for **Features → Code Analysis / Code Quality / Security Analysis** because that is actually proper Markdown hierarchy:
-
-```text
-# AI Code Intelligence
-    ##
-    ## Features
-        ###
-        ### Code Analysis
-        ### Code Quality
-````
-
-It is **not a ChatGPT thing**. GitHub, GitLab, VS Code, and virtually every Markdown-based project use this syntax.
-
-But if you want the repository to look particularly clean, this version is a good balance: **technical, readable, not overloaded with emojis, and appropriate for a final-year project.**
-
-After replacing it, save with **Ctrl + S**. Then tell me **`README replaced`** and we'll check it before committing anything.
