@@ -302,6 +302,16 @@ The core code analysis and forensic comparison functionality has been implemente
 
 The Streamlit interface is operational, the main analysis modules have automated tests, and the current test suite passes successfully.
 
+## Application Screenshots
+
+### Code Analysis
+
+![Code Analysis](screenshots/code-analysis.png)
+
+### Code Forensics
+
+![Code Forensics](screenshots/code-forensic.png)
+
 ## Author
 
 Parkavi_off
