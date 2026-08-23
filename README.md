@@ -1,610 +1,335 @@
-\# 🧠 AI Code Intelligence
+Yes. For a **final-year project GitHub repository**, I would keep it clean, technical, and human-written — no excessive emojis, no marketing language, and only `#` / `##` headings.
 
+Replace your entire `README.md` with this:
 
+````markdown
+# AI Code Intelligence
 
-An AI-powered Python code analysis and forensic comparison platform built with Python and Streamlit.
+AI Code Intelligence is a Python-based source code analysis and forensic comparison system developed as a final-year project.
 
+The application analyzes Python programs using static source-code analysis and provides information about code complexity, quality, security patterns, bug risk, and structural similarity.
 
+The project includes a Streamlit web interface for interacting with the analysis tools.
 
-AI Code Intelligence analyzes Python source code across multiple dimensions including code quality, cyclomatic complexity, security, bug risk, structural characteristics, and code similarity.
+## Features
 
+### Code Analysis
 
+The application accepts Python source files and extracts structural information using Python's Abstract Syntax Tree (AST).
 
-\## 🚀 Features
+The analysis includes:
 
+- Lines of code
+- Functions and classes
+- Conditional statements
+- Loops
+- Return statements
+- Function calls
+- Imports
+- Average function length
+- Cyclomatic complexity
 
+The extracted information is used by the quality, security, bug prediction, and recommendation modules.
 
-\### 🔍 Code Analysis
+### Code Quality
 
+The quality analyzer evaluates the extracted code metrics and produces a quality score.
 
+It can identify issues such as:
 
-Upload a Python source file and receive:
+- High cyclomatic complexity
+- Large functions
+- Excessive conditional branching
+- Other maintainability concerns
 
+The recommendation engine converts these findings into suggestions for improving the source code.
 
+### Security Analysis
 
-\- Lines of code
+The security analyzer checks Python source code for potentially unsafe patterns implemented in the analysis rules.
 
-\- Function and class counts
+Detected issues are reported with their severity, source line, explanation, and recommended action.
 
-\- If-statement and loop counts
+### Bug Risk Prediction
 
-\- Return and function-call counts
+The project includes a Random Forest based demonstration model for estimating potential bug risk.
 
-\- Import counts
+The prediction is based on extracted source-code characteristics. The application also displays important features that influenced the model prediction.
 
-\- Average function length
+The prediction is intended for analysis and research purposes rather than as a definitive measurement of software reliability.
 
-\- Cyclomatic complexity
+### Code DNA
 
-\- Code quality score
+The Code DNA module represents a program using a structural feature sequence.
 
-\- Maintainability recommendations
-
-\- Security analysis
-
-\- Bug-risk prediction
-
-\- Model feature importance
-
-\- Structural Code DNA
-
-\- SHA-256 code fingerprint
-
-
-
-\### 🧬 Code Forensics
-
-
-
-Compare two Python programs based on their structural characteristics.
-
-
-
-The forensic module provides:
-
-
-
-\- Structural similarity percentage
-
-\- Similarity assessment
-
-\- Feature-by-feature comparison
-
-\- Structural DNA comparison
-
-\- Forensic explanation
-
-
-
-\### 🤖 Bug Risk Prediction
-
-
-
-A Random Forest demonstration model estimates potential bug risk using extracted code metrics.
-
-
-
-The system also displays the features that contribute most strongly to the model's prediction.
-
-
-
-\### 🔐 Security Analysis
-
-
-
-The security analyzer checks Python source code for potentially unsafe coding patterns and provides recommendations when issues are detected.
-
-
-
-\### 🧬 Code DNA
-
-
-
-Each analyzed program is represented by a structural DNA sequence based on extracted code characteristics.
-
-
-
-A SHA-256 fingerprint is also generated to provide a deterministic identifier for the analyzed source structure.
-
-
-
-\## 🏗️ System Architecture
-
-
-
-```text
-
-                   ┌──────────────────────┐
-
-                   │    Streamlit App     │
-
-                   │       app.py         │
-
-                   └──────────┬───────────┘
-
-                              │
-
-             ┌────────────────┼────────────────┐
-
-             │                │                │
-
-             ▼                ▼                ▼
-
-     ┌──────────────┐ ┌──────────────┐ ┌──────────────┐
-
-     │   Feature    │ │   Quality    │ │   Security   │
-
-     │  Extractor   │ │   Analyzer   │ │   Analyzer   │
-
-     └──────────────┘ └──────────────┘ └──────────────┘
-
-             │                │                │
-
-             └────────────────┼────────────────┘
-
-                              ▼
-
-                   ┌──────────────────────┐
-
-                   │    Bug Predictor     │
-
-                   └──────────┬───────────┘
-
-                              │
-
-             ┌────────────────┼────────────────┐
-
-             ▼                ▼                ▼
-
-     ┌──────────────┐ ┌──────────────┐ ┌──────────────┐
-
-     │Recommendation│ │  Code DNA    │ │  Forensics   │
-
-     │    Engine    │ │  Generator   │ │   Analysis   │
-
-     └──────────────┘ └──────────────┘ └──────────────┘
-
-````
-
-
-
-\## 📂 Project Structure
-
-
-
-```text
-
-AI\_Code\_Intelligence/
-
-│
-
-├── app.py
-
-├── analyze.py
-
-├── compare.py
-
-│
-
-├── analyzer/
-
-│   ├── \_\_init\_\_.py
-
-│   ├── bug\_predictor.py
-
-│   ├── code\_dna.py
-
-│   ├── complexity\_analyzer.py
-
-│   ├── dna\_similarity.py
-
-│   ├── feature\_extractor.py
-
-│   ├── forensic\_analyzer.py
-
-│   ├── quality\_analyzer.py
-
-│   ├── recommendation\_engine.py
-
-│   └── security\_analyzer.py
-
-│
-
-├── test\_code/
-
-│   ├── complex\_sample.py
-
-│   ├── sample.py
-
-│   ├── sample2.py
-
-│   └── security\_sample.py
-
-│
-
-├── tests/
-
-│   ├── test\_bug\_predictor.py
-
-│   ├── test\_code\_dna.py
-
-│   ├── test\_dna\_similarity.py
-
-│   ├── test\_feature\_extractor.py
-
-│   ├── test\_quality\_analyzer.py
-
-│   ├── test\_recommendation\_engine.py
-
-│   └── test\_security\_analyzer.py
-
-│
-
-├── .gitignore
-
-└── README.md
-
-```
-
-
-
-\## 🛠️ Technologies Used
-
-
-
-\* Python 3.10+
-
-\* Streamlit
-
-\* Python AST
-
-\* Scikit-learn
-
-\* Random Forest
-
-\* Pytest
-
-\* SHA-256
-
-\* Git \& GitHub
-
-
-
-\## ⚙️ Installation
-
-
-
-Clone the repository:
-
-
-
-```bash
-
-git clone https://github.com/parkaviofficials-bit/AI\_Code\_Intelligence.git
-
-```
-
-
-
-Navigate to the project:
-
-
-
-```bash
-
-cd AI\_Code\_Intelligence
-
-```
-
-
-
-Create a virtual environment:
-
-
-
-```bash
-
-python -m venv venv
-
-```
-
-
-
-Activate it on Windows:
-
-
-
-```powershell
-
-venv\\Scripts\\Activate.ps1
-
-```
-
-
-
-Install dependencies:
-
-
-
-```bash
-
-pip install streamlit scikit-learn pytest
-
-```
-
-
-
-\## ▶️ Run the Application
-
-
-
-Start the Streamlit application:
-
-
-
-```bash
-
-streamlit run app.py
-
-```
-
-
-
-The application will open in your browser.
-
-
-
-\## 🧪 Run Tests
-
-
-
-Run the complete automated test suite:
-
-
-
-```bash
-
-python -m pytest
-
-```
-
-
-
-The current test suite validates:
-
-
-
-\* Feature extraction
-
-\* Quality analysis
-
-\* Security analysis
-
-\* Bug prediction
-
-\* Recommendation generation
-
-\* Code DNA generation
-
-\* DNA similarity
-
-
-
-\## 📊 Example Analysis
-
-
-
-For a complex Python program, the system can report metrics such as:
-
-
-
-```text
-
-Lines of Code:              50
-
-Functions:                   4
-
-Classes:                     0
-
-Cyclomatic Complexity:      14
-
-If Statements:              11
-
-Loops:                       2
-
-Returns:                     5
-
-Function Calls:             14
-
-```
-
-
-
-The system can then generate recommendations such as:
-
-
-
-```text
-
-Complexity — High cyclomatic complexity detected.
-
-
-
-Recommendation:
-
-Break complex logic into smaller functions and
-
-simplify deeply nested conditional branches.
-
-```
-
-
-
-\## 🧬 Code Forensics Example
-
-
-
-The forensic module compares two programs using their structural features.
-
-
+A SHA-256 fingerprint is also generated for the analyzed code representation.
 
 Example:
 
+```text
+4-0-11-2-5-14-1-28.5-14
+````
 
+### Code Forensics
+
+The forensic module compares two Python programs using their extracted structural features.
+
+The comparison provides:
+
+* Structural similarity percentage
+* Similarity assessment
+* Feature comparison
+* Structural DNA comparison
+* Forensic explanation
+
+Structural similarity is intended to describe similarities in program structure. It should not be treated as proof of plagiarism or common authorship.
+
+## System Overview
 
 ```text
-
-Code A DNA:
-
-4-0-11-2-5-14-1-28.5-14
-
-
-
-Code B DNA:
-
-3-1-1-1-2-3-1-7.0-3
-
-
-
-Structural Similarity:
-
-68.21%
-
-
-
-Assessment:
-
-MODERATE
-
+Python Source Code
+        |
+        v
+    AST Parsing
+        |
+        v
+ Feature Extraction
+        |
+        +-------------------+
+        |                   |
+        v                   v
+ Code Quality       Security Analysis
+        |
+        v
+ Bug Risk Prediction
+        |
+        v
+ Recommendations
+        |
+        v
+    Code DNA
 ```
 
+For forensic comparison:
+
+```text
+             Python Program A
+                    |
+                    v
+             Feature Extraction
+                    |
+                    |
+                    +------+
+                           |
+                           v
+                    Similarity Analysis
+                           ^
+                           |
+                    +------+
+                    |
+                    v
+             Feature Extraction
+                    ^
+                    |
+             Python Program B
+```
+
+## Project Structure
+
+```text
+AI_Code_Intelligence/
+|
+├── analyzer/
+|   ├── __init__.py
+|   ├── bug_predictor.py
+|   ├── code_dna.py
+|   ├── complexity_analyzer.py
+|   ├── dna_similarity.py
+|   ├── feature_extractor.py
+|   ├── forensic_analyzer.py
+|   ├── quality_analyzer.py
+|   ├── recommendation_engine.py
+|   └── security_analyzer.py
+|
+├── test_code/
+|   ├── complex_sample.py
+|   ├── sample.py
+|   ├── sample2.py
+|   └── security_sample.py
+|
+├── tests/
+|   ├── test_bug_predictor.py
+|   ├── test_code_dna.py
+|   ├── test_dna_similarity.py
+|   ├── test_feature_extractor.py
+|   ├── test_quality_analyzer.py
+|   ├── test_recommendation_engine.py
+|   └── test_security_analyzer.py
+|
+├── app.py
+├── analyze.py
+├── compare.py
+├── .gitignore
+└── README.md
+```
+
+## Technologies
+
+| Technology    | Purpose                     |
+| ------------- | --------------------------- |
+| Python        | Core implementation         |
+| Streamlit     | Web interface               |
+| Python AST    | Static source-code analysis |
+| Scikit-learn  | Bug-risk prediction         |
+| Random Forest | Machine-learning model      |
+| Pytest        | Automated testing           |
+| SHA-256       | Code fingerprinting         |
+| Git           | Version control             |
+| GitHub        | Source-code hosting         |
+
+## Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/parkaviofficials-bit/AI_Code_Intelligence.git
+```
+
+Move into the project directory:
+
+```bash
+cd AI_Code_Intelligence
+```
+
+Create a virtual environment:
+
+```bash
+python -m venv venv
+```
+
+Activate the environment on Windows:
+
+```powershell
+venv\Scripts\Activate.ps1
+```
 
+Install the required packages:
 
-The similarity score represents structural similarity based on the extracted feature representation. It should not be interpreted as proof that two programs contain identical source code.
+```bash
+pip install streamlit scikit-learn pytest
+```
 
+## Running the Application
 
+Start the Streamlit application:
 
-\## 🔬 Methodology
+```bash
+streamlit run app.py
+```
 
+The application provides two main sections:
 
+* Code Analysis
+* Code Forensics
 
-The system uses Python's Abstract Syntax Tree (AST) to analyze source code without executing the submitted program.
+In Code Analysis, upload a Python source file and run the analysis.
 
+In Code Forensics, upload two Python files and compare their structural characteristics.
 
+## Testing
 
-The feature extraction pipeline identifies structural characteristics including:
+The project contains automated tests for the core analysis modules.
 
+Run the complete test suite:
 
+```bash
+python -m pytest
+```
 
-1\. Functions
+The current test suite covers:
 
-2\. Classes
+* Feature extraction
+* Quality analysis
+* Security analysis
+* Bug prediction
+* Recommendation generation
+* Code DNA generation
+* DNA similarity
 
-3\. Conditional statements
+Current test status:
 
-4\. Loops
+```text
+7 passed
+```
 
-5\. Return statements
+## Example Analysis
 
-6\. Function calls
+For a sample Python program, the analyzer can produce metrics such as:
 
-7\. Imports
+```text
+Lines of Code:          50
+Functions:               4
+Classes:                 0
+If Statements:          11
+Loops:                   2
+Returns:                 5
+Function Calls:         14
+Cyclomatic Complexity:  14
+```
 
-8\. Function length
+Based on these metrics, the system can identify high complexity and provide recommendations such as splitting large functions or simplifying nested conditional logic.
 
-9\. Cyclomatic complexity
+## Limitations
 
+The bug-risk prediction model is a demonstration model developed for this project. Its output should not be considered a definitive prediction of software defects.
 
+Security analysis is limited to the rules implemented in the project and should not replace a professional security assessment.
 
-These features are then used by the different analysis modules.
+The forensic similarity score measures structural characteristics and does not establish plagiarism, authorship, or code ownership.
 
+## Future Work
 
+Future development could include:
 
-\## 🎯 Project Objectives
+* Support for additional programming languages
+* Additional security detection rules
+* Code smell detection
+* Duplicate-code detection
+* More advanced machine-learning models
+* GitHub repository analysis
+* Historical code-quality tracking
+* CI/CD integration
+* Automated refactoring suggestions
 
+## Project Status
 
+The core code analysis and forensic comparison functionality has been implemented.
 
-The main objectives of AI Code Intelligence are:
+The Streamlit interface is operational, the main analysis modules have automated tests, and the current test suite passes successfully.
 
+## Author
 
+Parkavi_off
 
-\* Automate Python source-code analysis
+Final Year Project
 
-\* Identify maintainability problems
+````
 
-\* Detect potentially risky coding patterns
+### One important correction
 
-\* Estimate bug risk
+I deliberately used `###` for **Features → Code Analysis / Code Quality / Security Analysis** because that is actually proper Markdown hierarchy:
 
-\* Provide explainable recommendations
+```text
+# AI Code Intelligence
+    ##
+    ## Features
+        ###
+        ### Code Analysis
+        ### Code Quality
+````
 
-\* Generate structural code fingerprints
+It is **not a ChatGPT thing**. GitHub, GitLab, VS Code, and virtually every Markdown-based project use this syntax.
 
-\* Compare programs based on structural characteristics
+But if you want the repository to look particularly clean, this version is a good balance: **technical, readable, not overloaded with emojis, and appropriate for a final-year project.**
 
-\* Provide a practical developer-oriented analysis dashboard
-
-
-
-\## 🔮 Future Enhancements
-
-
-
-Possible future improvements include:
-
-
-
-\* Support for additional programming languages
-
-\* Advanced machine-learning models
-
-\* Code smell detection
-
-\* Duplicate-code detection
-
-\* Vulnerability classification
-
-\* GitHub repository analysis
-
-\* Historical code-quality tracking
-
-\* Interactive visualizations
-
-\* Developer dashboards
-
-\* Automated refactoring suggestions
-
-\* CI/CD integration
-
-
-
-\## ⚠️ Disclaimer
-
-
-
-The bug-risk prediction and similarity analysis are intended as demonstration and research features.
-
-
-
-Predictions should not be treated as definitive proof of software defects, security vulnerabilities, authorship, or code plagiarism.
-
-
-
-\## 👨‍💻 Author
-
-
-
-\*\*Parkavi\_off\*\*
-
-
-
-AI Code Intelligence — Final Year Project
-
-
-
-\## 📄 License
-
-
-
-This project is currently intended for academic and educational purposes.
-
+After replacing it, save with **Ctrl + S**. Then tell me **`README replaced`** and we'll check it before committing anything.
